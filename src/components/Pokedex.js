@@ -38,6 +38,8 @@ const Pokedex = () => {
                         saveError(false);
                     } catch (error) {
                         saveError(true);
+                        setpokemons(null);
+                        setpokemon(null);
                     }
                 };
                 getPokemon();
@@ -50,6 +52,8 @@ const Pokedex = () => {
                         saveError(false);
                     } catch (error) {
                         saveError(true);
+                        setpokemons(null);
+                        setpokemon(null);
                     }
                 };
                 getPokemons();
