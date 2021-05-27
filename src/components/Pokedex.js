@@ -77,16 +77,16 @@ const Pokedex = () => {
                 </button>
             </div>
             <Form />
-            {error && (
+            {error ? (
                 <h2 className="error">
                     Ocurrio un error mientras se consultaba la API <br /> Por
                     favor intenta nuevamnete{" "}
                 </h2>
-            )}
-            {pokemon && <CardPoke pokemon={pokemon} />}
-            {pokemons && (
+            ) : pokemon ? (
+                <CardPoke pokemon={pokemon} />
+            ) : pokemons ? (
                 <Pagination array={pokemons} totalForPag={totalForPag} />
-            )}
+            ) : null}
         </div>
     );
 };
