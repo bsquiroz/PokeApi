@@ -1,0 +1,104 @@
+.pokedex {
+    padding: 1em;
+    min-height: 100vh;
+}
+
+.pokedex .title {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form {
+    padding: 1em;
+}
+
+form .radios {
+    margin-bottom: 1em;
+}
+
+form .radios input {
+    margin-top: 0.5em;
+}
+
+.center-options {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.center-options .buscar {
+    background-color: lightcoral;
+    margin-left: 2em;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.center-options select {
+    margin-left: 1em;
+}
+
+/* card */
+.card-body {
+    max-width: 300px;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    padding: 1em 0;
+    text-align: center;
+    margin: 1em auto;
+}
+
+.card-body h4 {
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    padding-bottom: 1em;
+    border-radius: 5px;
+}
+
+.box-img {
+    margin: auto;
+    max-width: 250px;
+    min-width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+.box-img img {
+    width: 80%;
+    height: 80%;
+}
+
+.card-body .types {
+    margin: 0.5em 0;
+    font-weight: bold;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stats {
+    padding: 1em;
+}
+
+.stats-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    text-align: center;
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}

@@ -1,0 +1,42 @@
+.container-enc {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.encounters {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.content-img {
+    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    padding: 2em;
+}
+
+.content-img img {
+    width: 100%;
+}
+
+.encounters .flex-enc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.encounters .item {
+    width: 100px;
+    margin-bottom: 1em;
+}
+
+@media (max-width: 800px) {
+    .encounters {
+        margin-top: 5em;
+    }
+}

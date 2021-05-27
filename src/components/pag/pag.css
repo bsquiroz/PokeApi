@@ -1,0 +1,47 @@
+.pagination {
+    text-align: center;
+}
+
+.decoration {
+    font-weight: 800;
+    border: 1px solid;
+    border-radius: 100%;
+    padding: 0 5px;
+    margin-right: 1em;
+}
+
+.pag-span span {
+    display: inline-block;
+    margin-top: 0.5em;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.btn-pag {
+    background-color: transparent;
+    font-size: 2em;
+    outline: none;
+    border: none;
+    margin: 0.5em 1em;
+}
+
+.flex {
+    width: 90%;
+    margin: 2em auto;
+    display: grid;
+    grid-template-columns: repeat(3, 31%);
+    justify-content: space-between;
+}
+
+@media (max-width: 950px) {
+    .flex {
+        grid-template-columns: repeat(2, 45%);
+    }
+}
+
+@media (max-width: 650px) {
+    .flex {
+        grid-template-columns: repeat(1, 100%);
+        justify-content: center;
+    }
+}

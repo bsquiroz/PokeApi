@@ -1,0 +1,25 @@
+.Home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Home input {
+    margin-top: 2em;
+    padding: 1em;
+    width: 200px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    transition: all 1s;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.Home input:focus {
+    border: 1px solid #000;
+}
