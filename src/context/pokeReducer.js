@@ -26,6 +26,7 @@ const Reducer = (state, action) => {
             return {
                 ...state,
                 name: action.payload,
+                search: {},
             };
 
         case CHANGE_TOTAL_FOR_PAGES:

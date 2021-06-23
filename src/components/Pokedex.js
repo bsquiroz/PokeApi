@@ -74,13 +74,15 @@ const Pokedex = () => {
 
     return (
         <div className="pokedex" style={dark ? darkTrue : darkFalse}>
-            <div className="title">
-                <h1>Hola entrenador, {name}</h1>
-                <button className="btn salir" onClick={() => setAllowed()}>
-                    Salir
-                </button>
+            <div className="pokedex__content-text">
+                <div className="title">
+                    <h1>Hola entrenador, {name}</h1>
+                    <button className="btn salir" onClick={() => setAllowed()}>
+                        Salir
+                    </button>
+                </div>
+                <Form />
             </div>
-            <Form />
             {error ? (
                 <h2 className="error">
                     Ocurrio un error mientras se consultaba la API <br /> Por

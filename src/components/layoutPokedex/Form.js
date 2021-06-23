@@ -19,7 +19,7 @@ const Form = () => {
     useEffect(() => {
         const res = axios("https://pokeapi.co/api/v2/type");
         res.then((response) => setTypes(response.data.results));
-    }, [types]);
+    }, []);
 
     const handleRadios = (e) => {
         setRadios(e.target.value);
@@ -54,64 +54,70 @@ const Form = () => {
     };
 
     return (
-        <form onSubmit={handleForm}>
-            <div className="radios">
-                {" "}
-                <h3>Seleccione el tipo de busqueda</h3>
-                <input
-                    type="radio"
-                    name="search"
-                    value="0"
-                    onChange={handleRadios}
-                    defaultChecked
-                />
-                <label>Buscar por id o nombre</label>
-                <br />
-                <input
-                    type="radio"
-                    name="search"
-                    value="1"
-                    onChange={handleRadios}
-                />
-                <label>buscar por tipo</label>
-            </div>
-            {radios === "0" && (
-                <div className="center-options">
-                    <label>Ingresa el id o nombre del pokemon</label>
+        <div className="form__container form__text-aling">
+            <form onSubmit={handleForm}>
+                <div className="radios">
+                    {" "}
+                    <h3>Seleccione el tipo de busqueda</h3>
                     <input
-                        type="text"
-                        name="nameOrId"
-                        value={values.nameOrId}
-                        onChange={handleInputs}
+                        type="radio"
+                        name="search"
+                        value="0"
+                        onChange={handleRadios}
+                        defaultChecked
                     />
+                    <label>Buscar por id o nombre</label>
+                    <br />
+                    <input
+                        type="radio"
+                        name="search"
+                        value="1"
+                        onChange={handleRadios}
+                    />
+                    <label>buscar por tipo</label>
                 </div>
-            )}
-            {radios === "1" && (
-                <>
+                {radios === "0" && (
                     <div className="center-options">
-                        <label>Escoge el tipo de pokemon</label>
-                        <select name="type" onChange={handleInputs}>
-                            {types &&
-                                types.map((type) => (
-                                    <option key={type.name}>{type.name}</option>
-                                ))}
-                        </select>
-                        <button className="buscar" type="submit">
-                            Buscar
-                        </button>
+                        <label>Ingresa el id o nombre del pokemon</label>
+                        <input
+                            type="text"
+                            name="nameOrId"
+                            value={values.nameOrId}
+                            onChange={handleInputs}
+                        />
                     </div>
-                    <div className="center-options">
-                        <label>¿Cuantos pokemones deseas ver por pagina?</label>
-                        <select onChange={handleTotalPokePag}>
-                            <option value="4">4</option>
-                            <option value="6">6</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                </>
-            )}
-        </form>
+                )}
+                {radios === "1" && (
+                    <>
+                        <div className="center-options">
+                            <label>Escoge el tipo de pokemon</label>
+                            <select name="type" onChange={handleInputs}>
+                                {types &&
+                                    types.map((type) => (
+                                        <option key={type.name}>
+                                            {type.name}
+                                        </option>
+                                    ))}
+                            </select>
+                            <button className="buscar" type="submit">
+                                Buscar
+                            </button>
+                        </div>
+                        <div className="center-options">
+                            <label>
+                                ¿Cuantos pokemones deseas ver por pagina?
+                            </label>
+                            <select onChange={handleTotalPokePag}>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </>
+                )}
+            </form>
+        </div>
     );
 };
 

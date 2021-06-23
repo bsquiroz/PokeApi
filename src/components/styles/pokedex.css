@@ -11,6 +11,19 @@
     align-items: center;
 }
 
+.pokedex__content-text {
+    max-width: 720px;
+    margin: auto;
+    margin-bottom: 2em;
+    background-color: rgb(250, 149, 149);
+    border-radius: 1em;
+}
+
+.form__container {
+    max-width: 728px;
+    margin: auto;
+}
+
 form {
     padding: 1em;
 }
@@ -84,7 +97,7 @@ form .radios input {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .stats {
@@ -94,6 +107,10 @@ form .radios input {
 .stats-flex {
     display: flex;
     flex-direction: column;
+}
+
+.stats-name {
+    color: #000;
 }
 
 .error {

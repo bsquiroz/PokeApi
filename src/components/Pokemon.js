@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { useProtectedRoute } from "../protectedRoutes/ProvideProtected";
 import { colors } from "../helpers/Colors";
 import pokeContext from "../context/pokeContext";
+import { holaMundo } from "../helpers/Types";
 import "./styles/pokemon.css";
 
 const darkTrue = {
@@ -91,7 +92,12 @@ const Pokemon = () => {
                                 </div>
                                 <div>
                                     {types.map((e) => (
-                                        <p key={e.type.name}>{e.type.name}</p>
+                                        <div className="type" key={e.type.name}>
+                                            <img
+                                                src={holaMundo(e.type.name)}
+                                                alt={e.type.name}
+                                            />
+                                        </div>
                                     ))}
                                 </div>
                                 <div>

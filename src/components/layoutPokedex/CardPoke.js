@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { colors } from "../../helpers/Colors";
+import { holaMundo } from "../../helpers/Types";
 
 const CardPoke = ({ pokemon }) => {
     const pokeName = pokemon.name;
     const id = pokemon.id;
-    // const img = pokemon.sprites.other.official-artwork.front_default;
     const img =
         pokemon.sprites.other.dream_world.front_default ||
         pokemon.sprites.front_default;
-    // const img = pokemon.sprites.front_default;
     const types = pokemon.types;
     const stats = pokemon.stats;
     const statsFilter = stats.filter(
@@ -21,13 +20,14 @@ const CardPoke = ({ pokemon }) => {
     const color = colors[aux];
 
     return (
-        <div className="card-body" style={{ border: `3px solid ${color}` }}>
+        <div
+            className="card-body"
+            style={{
+                background: `radial-gradient(circle,rgba(253, 223, 223, 1) 0%, ${color} 100%)`,
+            }}
+        >
             <h4 style={{ borderBottom: `3px solid ${color}` }}>{pokeName}</h4>
-            <Link
-                to={`/pokedex/${id}`}
-                className="enlace"
-                style={{ color: ` ${color}` }}
-            >
+            <Link to={`/pokedex/${id}`} className="enlace">
                 <b># {id}</b>
             </Link>
             <div style={{ background: color }} className="box-img">
@@ -35,9 +35,9 @@ const CardPoke = ({ pokemon }) => {
             </div>
             <div className="types" style={{ background: `${color}` }}>
                 {types.map((e) => (
-                    <p key={e.type.name} style={{ color: "#000" }}>
-                        {e.type.name}
-                    </p>
+                    <div key={e.type.name} className="type">
+                        <img src={holaMundo(e.type.name)} alt="" />
+                    </div>
                 ))}
             </div>
             <div className="stats">
